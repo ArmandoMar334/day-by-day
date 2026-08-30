@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support — Day by Day</title>
+<meta name="description" content="Support and frequently asked questions for Day by Day, a habit tracker for iPhone.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'%3E%3Crect width='96' height='96' fill='%23F4F1EA'/%3E%3Ccircle cx='48' cy='54' r='30' fill='none' stroke='%238B5500' stroke-width='15' stroke-linecap='round' stroke-dasharray='141 48' transform='rotate(-90 48 54)'/%3E%3Ccircle cx='48' cy='48' r='30' fill='none' stroke='%23C9893D' stroke-width='15' stroke-linecap='round' stroke-dasharray='141 48' transform='rotate(-90 48 48)'/%3E%3Ccircle cx='18' cy='48' r='7.5' fill='%231A1712'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F4F1EA;
+    --card: #FFFDF9;
+    --ink: #1A1712;
+    --ink-secondary: rgba(26, 23, 18, 0.62);
+    --ink-faint: rgba(26, 23, 18, 0.44);
+    --hairline: rgba(26, 23, 18, 0.09);
+    --accent: #C9893D;
+    --accent-under: #8B5500;
+    --accent-soft: #F2E4CE;
+    --shadow: rgba(74, 56, 20, 0.16);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Sora', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--accent-under); }
+
+  .wrap { max-width: 640px; margin: 0 auto; padding: 0 24px 80px; }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 0;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    color: var(--ink);
+  }
+
+  header a.back {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--ink-secondary);
+    text-decoration: none;
+  }
+
+  .eyebrow {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  h1 {
+    font-size: clamp(30px, 5vw, 38px);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    margin: 10px 0 14px;
+    text-wrap: balance;
+  }
+
+  .intro {
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: var(--ink-secondary);
+    max-width: 52ch;
+    margin: 0 0 40px;
+  }
+
+  .contact-card {
+    background: var(--ink);
+    color: var(--card);
+    border-radius: 22px;
+    padding: 26px 28px;
+    margin-bottom: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .contact-card .eyebrow { color: rgba(255, 253, 249, 0.5); }
+  .contact-card p {
+    margin: 6px 0 0;
+    font-size: 15px;
+    color: rgba(255, 253, 249, 0.85);
+    overflow-wrap: anywhere;
+  }
+  .contact-card a {
+    color: var(--ink);
+    background: var(--card);
+    padding: 11px 20px;
+    border-radius: 99px;
+    font-size: 13.5px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    flex: none;
+  }
+
+  .faq {
+    display: grid;
+    gap: 10px;
+  }
+
+  details {
+    background: var(--card);
+    border: 1px solid var(--hairline);
+    border-radius: 16px;
+    padding: 4px 20px;
+    box-shadow: 0 1px 1px var(--shadow);
+  }
+
+  summary {
+    padding: 16px 0;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  summary::-webkit-details-marker { display: none; }
+
+  summary::after {
+    content: "+";
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--accent-under);
+    flex: none;
+    transition: transform 0.2s;
+  }
+
+  details[open] summary::after { transform: rotate(45deg); }
+
+  details p {
+    margin: 0 0 18px;
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: var(--ink-secondary);
+  }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--hairline);
+    font-size: 13px;
+    color: var(--ink-faint);
+  }
+
+  @media (max-width: 420px) {
+    .contact-card { flex-direction: column; align-items: flex-start; }
+    .contact-card p { font-size: 13.5px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <a class="brand" href="index.html">
+      <svg width="26" height="26" viewBox="0 0 96 96">
+        <circle cx="48" cy="54" r="30" fill="none" stroke="#8B5500" stroke-width="15" stroke-linecap="round" stroke-dasharray="141 48" transform="rotate(-90 48 54)"></circle>
+        <circle cx="48" cy="48" r="30" fill="none" stroke="#C9893D" stroke-width="15" stroke-linecap="round" stroke-dasharray="141 48" transform="rotate(-90 48 48)"></circle>
+        <circle cx="18" cy="48" r="7.5" fill="#1A1712"></circle>
+      </svg>
+      day by day
+    </a>
+    <a class="back" href="index.html">← Back</a>
+  </header>
+
+  <div class="eyebrow">Support</div>
+  <h1>How can we help?</h1>
+  <p class="intro">Most questions are answered below. For anything else, reach out directly — a real person reads every message.</p>
+
+  <div class="contact-card">
+    <div>
+      <div class="eyebrow">Get in touch</div>
+      <p>armando.mar.334@gmail.com</p>
+    </div>
+    <a href="mailto:armando.mar.334@gmail.com">Email support</a>
+  </div>
+
+  <div class="faq">
+    <details open>
+      <summary>Does Day by Day need an internet connection?</summary>
+      <p>No. Everything runs on your device — adding habits, tracking streaks, notifications, and widgets all work fully offline.</p>
+    </details>
+    <details>
+      <summary>Does the app collect any of my data?</summary>
+      <p>No. There's no account, no sign-up, and no analytics. Your habits and history are stored only in on-device storage and, for the widget, in an App Group container shared between the app and widget — never sent anywhere.</p>
+    </details>
+    <details>
+      <summary>How do I add a new habit?</summary>
+      <p>Tap the round + button in the middle of the tab bar on the Today screen. Give it a name, a color, choose how it's completed (Check, Counter, or Timer), pick which days it's active, and optionally set a daily reminder.</p>
+    </details>
+    <details>
+      <summary>How do reminders work?</summary>
+      <p>Turn on a reminder from a habit's detail screen or when creating it. You'll get a notification at that time on each active day, with two quick actions built in — <b>Done</b> marks the habit complete without opening the app, and <b>In 1 hour</b> reschedules it once.</p>
+    </details>
+    <details>
+      <summary>What do the widgets show?</summary>
+      <p>A small widget with today's progress ring, a medium widget listing today's habits (tap a circle to check one off without opening the app), and Lock Screen widgets for today's progress and your best streak.</p>
+    </details>
+    <details>
+      <summary>Can I use the app in Spanish?</summary>
+      <p>Yes — Day by Day follows your iPhone's language setting automatically, in English or Spanish. Change it under Settings → General → Language &amp; Region.</p>
+    </details>
+    <details>
+      <summary>I found a bug, or have a feature request</summary>
+      <p>Email <a href="mailto:armando.mar.334@gmail.com">armando.mar.334@gmail.com</a> with what happened and, if it's a bug, the steps to reproduce it. Screenshots help.</p>
+    </details>
+  </div>
+
+  <footer>© 2026 Day by Day</footer>
+</div>
+
+</body>
+</html>
